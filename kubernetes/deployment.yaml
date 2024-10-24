@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nikectorecart-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nikectorecart
+  template:
+    metadata:
+      labels:
+        app: nikectorecart
+    spec:
+      containers:
+      - name: nikectorecart
+        image: eren070502/nikectorecart:latest
+        ports:
+        - containerPort: 80
+
